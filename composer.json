@@ -1,7 +1,6 @@
 {
     "name": "mdeskorg/viber-bot-api",
     "description": "Viber Bot Api - Simple PHP API for Viber",
-    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
