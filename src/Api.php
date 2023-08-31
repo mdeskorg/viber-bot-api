@@ -62,8 +62,16 @@ class Api
 
   public function getUser($id)
   {
-    $response = $this->request('get_user_details', ['id' => $id]);
-    return collect($response->get('user'));
+
+     try {
+            $response = $this->request('get_user_details', ['id' => $id]);
+
+            return collect($response->get('user'));
+        } catch (Throwable $th) {
+            return collect([]);
+        }
+    
+ 
   }
 
   public function sendMessage($user_id, $text)
