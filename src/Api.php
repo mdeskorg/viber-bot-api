@@ -3,6 +3,7 @@
 namespace Mdeskorg\ViberBotApi;
 
 use Exception;
+use Throwable;
 
 class Api
 {
@@ -62,16 +63,12 @@ class Api
 
   public function getUser($id)
   {
-
      try {
             $response = $this->request('get_user_details', ['id' => $id]);
-
             return collect($response->get('user'));
         } catch (Throwable $th) {
             return collect([]);
         }
-    
- 
   }
 
   public function sendMessage($user_id, $text)
